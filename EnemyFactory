@@ -1,0 +1,34 @@
+using UnityEngine;
+
+namespace DefaultNamespace
+{
+    public class EnemyFactory : MonoBehaviour
+    {
+        public GameObject enemyPrefab;
+        private GameObject enemyObject;
+
+        public Enemy CreateEnemy(EnemyType type)
+        {
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                enemyObject = Instantiate(enemyPrefab);
+            }
+            
+            Enemy enemy = enemyObject.GetComponent<Enemy>();
+
+            switch (type)
+            {
+                case EnemyType.Normal:
+                    enemyObject.name = "Normal Enemy";
+                    enemy = new NormalEnemy();
+                    break;
+                case EnemyType.Strong:
+                    enemyObject.name = "Strong Enemy";
+                    enemy = new StrongEnemy();
+                    break;
+            }
+
+            return enemy;
+        }
+    }
+}
