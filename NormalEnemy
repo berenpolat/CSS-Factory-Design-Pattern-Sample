@@ -1,0 +1,17 @@
+using UnityEngine;
+
+namespace DefaultNamespace
+{
+    public class NormalEnemy: Enemy
+    {
+        public override void Attack()
+        {
+           Debug.Log("Normal Enemy is attacking");
+        }
+
+        public override void Move()
+        {
+            Debug.Log("Normal Enemy is attacking");
+        }
+    }
+}
