@@ -1,0 +1,23 @@
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.PlayerLoop;
+
+namespace DefaultNamespace
+{
+    public class GameManager: MonoBehaviour
+    {
+        public EnemyFactory enemyFactory;
+        public List<int> randomNumbers;
+        public NewBehaviourScript nbs;
+        private void Start()
+        {
+            Enemy normalEnemy = enemyFactory.CreateEnemy(EnemyType.Normal);
+            normalEnemy.Move();
+            normalEnemy.Attack();
+
+            Instantiate(nbs.enemy);
+            Enemy strongEnemy = enemyFactory.CreateEnemy(EnemyType.Strong);
+            strongEnemy.Move();
+            strongEnemy.Attack();
+        }
+        }
