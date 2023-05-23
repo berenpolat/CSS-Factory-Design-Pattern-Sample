@@ -1,0 +1,17 @@
+using UnityEngine;
+
+namespace DefaultNamespace
+{
+    public class StrongEnemy:Enemy
+    {
+        public override void Attack()
+        {
+            Debug.Log(" Strong Enemy is attacking");
+        }
+
+        public override void Move()
+        {
+            Debug.Log(" Strong Enemy is attacking");
+        }
+    }
+}
